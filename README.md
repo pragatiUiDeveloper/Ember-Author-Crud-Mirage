@@ -8,4 +8,4 @@ To run the application:
 npm install 
 ember s 
 
-Note currently filter to search author by name is not working.
+Global search filter to search author by name is case sensetive.
