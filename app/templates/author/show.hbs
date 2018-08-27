@@ -1,0 +1,17 @@
+	{{outlet}}
+	<br>
+	<h3>This is inner nested route.</h3>
+
+		<h3>NAME: {{model.name}}</h3>
+		<p>AGE: {{add-one model.age}}</p>
+
+		<p>ADMIN: {{model.admin}} <span> ~this is overrided as true by show model</span></p>
+
+		<p>AVATAR: {{model.avatar}}</p>
+		<img src={{model.avatar}} alt="Logo" >
+		<br><br>
+		<button class="btn btn-outline-primary btn-lg"{{action "delete" model.id}}>Delete</button> 
+		<button class="btn btn-outline-danger btn-lg"{{action "edit" model.id}}>Edit</button>	    	
+					
+
+		<br><br>{{#link-to "author" tagName="button" class="btn btn-outline-primary btn-lg"}}Go to Authors{{/link-to}}

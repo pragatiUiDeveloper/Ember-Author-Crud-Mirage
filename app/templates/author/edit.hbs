@@ -1,0 +1,28 @@
+{{outlet}}
+<br>
+<h3>This is Nested Route: Edit Route</h3>
+		<h3>NAME: {{input value=model.name}}</h3>
+		<p>AGE: {{input value=model.age}}</p>
+		<p>ADMIN: {{model.admin}}
+			{{#radio-button
+			  value=true
+			  groupValue=model.admin
+			  changed="adminToggled"}}
+			  True
+			{{/radio-button}}
+
+			{{#radio-button
+			  value=false
+			  groupValue=model.admin
+			  changed="adminToggled"}}
+			  False
+			 {{/radio-button}}
+		</p>
+		<p>AVATAR: {{input value=model.avatar}}</p>
+		<img src={{model.avatar}} alt="Logo">
+		<br><br>
+		<button class="btn btn-outline-primary btn-lg"{{action "saveEdit" model}}>SAVE</button> 
+		<button class="btn btn-outline-danger btn-lg"{{action "cancelEdit" model}}>CANCEl</button>	    	
+					
+
+		<br><br>{{#link-to "author" tagName="button" class="btn btn-outline-primary btn-lg"}}Go to Authors{{/link-to}}

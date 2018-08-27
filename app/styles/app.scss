@@ -1,0 +1,26 @@
+
+@import "ember-bootstrap/bootstrap";
+.listClass{
+	background:pink;
+}
+.inline{
+	display: inline-block;
+}
+.flex{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid grey;
+}
+.borderOutlet{
+	border: 1px solid grey;
+	background: lightblue;
+	padding: 5% 4%;
+}
+.center{
+	text-align: center;
+}
+.componentInput{
+	width: 50px;
+	height: 20px;
+}

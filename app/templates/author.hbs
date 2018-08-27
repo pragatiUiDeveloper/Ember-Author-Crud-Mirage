@@ -1,0 +1,43 @@
+
+	<div class="row">
+  	<div class="col-sm-7 col-xs-6 col-md-7 listClass">
+
+  		{{#each flashMessages.queue as |flash|}}
+  			{{flash-message flash=flash}}
+		{{/each}}
+  
+    <ul>
+  		<h3 class="center">Filter Authors:</h3> 
+  		
+  		{{#author-filter authors=model as |filteredAuthorProp|}}
+	    	{{#each filteredAuthorProp as |author|}}
+	    	<div class="flex">
+				<div>
+					<img src={{author.avatar}} alt="Logo">
+				</div>
+				<div>
+					<h3>NAME:{{#link-to "author.show" author.id}} {{author.name}} {{/link-to}}</h3>
+					<p>AGE: {{author.age}}</p>
+					<p>ADMIN: {{author.admin}}</p>
+					<p>AVATAR: {{author.avatar}}</p>
+					<p>SR. NO.: {{author.srNo}}</p>	
+					<p>HOBBIES: 
+						{{#each author.hobbies as |hobbies|}}
+							<li>{{hobbies.hobbyValue}}</li>
+						{{/each}}
+					</p>		
+				</div>	
+			</div>	 
+			{{/each}}
+		{{/author-filter}}
+	</ul>
+	</div>
+	<div class="col-sm-4 col-xs-6 col-md-5">
+	<br><br>{{#link-to "author.new" tagName="button" class="btn btn-outline-primary btn-lg submitAuthor"}}Create New Author{{/link-to}}
+	<br><br>
+		<div class="borderOutlet">
+		{{outlet}}
+		</div>
+	</div>
+</div>
+
